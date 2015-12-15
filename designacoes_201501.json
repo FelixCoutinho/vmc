@@ -1,0 +1,78 @@
+[{
+	"data": "4-10 de Janeiro",
+	"nome": "Felix Coutinho",
+	"ajudante": null,
+	"caracteristica": null,
+	"designacao": "Presidente",
+	"proferido": "A"
+}, {
+	"data": "4-10 de Janeiro",
+	"nome": "Francisco de Jesus",
+	"ajudante": null,
+	"caracteristica": 3,
+	"designacao": "Leitura",
+	"proferido": "A"
+}, {
+	"data": "11-17 de Janeiro",
+	"nome": "Felix Coutinho",
+	"ajudante": null,
+	"caracteristica": null,
+	"designacao": "Presidente",
+	"proferido": "A"
+}, {
+	"data": "11-17 de Janeiro",
+	"nome": "Moisés França",
+	"ajudante": null,
+	"caracteristica": 1,
+	"designacao": "Leitura",
+	"proferido": "A"
+}, {
+	"data": "11-17 de Janeiro",
+	"nome": "Ana Beatriz Lopes",
+	"ajudante": "Esmênia Coutinho",
+	"caracteristica": 22,
+	"designacao": "Primeira visita",
+	"proferido": "A"
+}, {
+	"data": "11-17 de Janeiro",
+	"nome": "Eliete Leite",
+	"ajudante": "Francisca Santos",
+	"caracteristica": 20,
+	"designacao": "Revisita",
+	"proferido": "A"
+}, {
+	"data": "11-17 de Janeiro",
+	"nome": "Edison Alves",
+	"ajudante": "Roger Robinson",
+	"caracteristica": 39,
+	"designacao": "Estudo bíblico",
+	"proferido": "A"
+}, {
+	"data": "11-17 de Janeiro",
+	"nome": "Olair Oliveira",
+	"ajudante": null,
+	"caracteristica": 13,
+	"designacao": "Leitura",
+	"proferido": "B"
+}, {
+	"data": "11-17 de Janeiro",
+	"nome": "Eliane França",
+	"ajudante": "Socorro Moreira",
+	"caracteristica": 24,
+	"designacao": "Primeira visita",
+	"proferido": "B"
+}, {
+	"data": "11-17 de Janeiro",
+	"nome": "Francisca Simões",
+	"ajudante": "Lindalva Costa",
+	"caracteristica": 37,
+	"designacao": "Revisita",
+	"proferido": "B"
+}, {
+	"data": "11-17 de Janeiro",
+	"nome": "Fabrício Barbosa",
+	"ajudante": "Jessé Silva",
+	"caracteristica": 42,
+	"designacao": "Estudo bíblico",
+	"proferido": "B"
+}]
