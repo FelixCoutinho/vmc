@@ -1,28 +1,28 @@
 [{
 	"data": "4-10 de Janeiro",
 	"nome": "Felix Coutinho",
-	"ajudante": null,
-	"caracteristica": null,
+	"ajudante": "",
+	"caracteristica": "",
 	"designacao": "Presidente",
 	"proferido": "A"
 }, {
 	"data": "4-10 de Janeiro",
 	"nome": "Francisco de Jesus",
-	"ajudante": null,
+	"ajudante": "",
 	"caracteristica": 3,
 	"designacao": "Leitura",
 	"proferido": "A"
 }, {
 	"data": "11-17 de Janeiro",
 	"nome": "Felix Coutinho",
-	"ajudante": null,
-	"caracteristica": null,
+	"ajudante": "",
+	"caracteristica": "",
 	"designacao": "Presidente",
 	"proferido": "A"
 }, {
 	"data": "11-17 de Janeiro",
 	"nome": "Moisés França",
-	"ajudante": null,
+	"ajudante": "",
 	"caracteristica": 1,
 	"designacao": "Leitura",
 	"proferido": "A"
@@ -50,7 +50,7 @@
 }, {
 	"data": "11-17 de Janeiro",
 	"nome": "Olair Oliveira",
-	"ajudante": null,
+	"ajudante": "",
 	"caracteristica": 13,
 	"designacao": "Leitura",
 	"proferido": "B"
