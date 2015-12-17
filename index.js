@@ -1,115 +1,117 @@
+"use strict";
+
 var pdfFillForm = require('pdf-fill-form');
 var fs = require('fs');
 var merge = require('merge'),
-	original, cloned;
+    original, cloned;
+var uuid = require('uuid');
 
-var data = JSON.parse(fs.readFileSync('designacoes_201501.json', 'utf8'));
+var JSON_DATA_FILE = 'designacoes_201501.json';
+var ASSIGNMENT_BASE_FILE = 'S-89-T-4up-edited.pdf';
+var ENCONDING_JSON_DATA_FILE = 'utf8';
+var JSON_DATA = JSON.parse(fs.readFileSync(JSON_DATA_FILE, ENCONDING_JSON_DATA_FILE));
+var AMOUNT_OF_ASSIGNMENT = JSON_DATA.length;
+var AMOUNT_OF_ASSIGNMENT_PER_PAGE = 4;
 
-var amount = data.length;
-var per_page = 4;
-var pages_total = Math.ceil(amount / per_page);
-
-var pages = [];
-
-for (var i = 0; i < amount; i = i + per_page) {
-	pages.push(data.slice(i, (i + per_page)));
-};
-
-var finalJson = [];
-for (var i = 0; i < pages.length; i++) {
-	var subFinalJson = {};
-	for (var j = 0; j < pages[i].length; j++) {
-		var objectDesire = pages[i][j];
-		if (objectDesire.designacao === 'Presidente') {
-			objectDesire.outra = true;
-			objectDesire.outraTexto = objectDesire.designacao;
-			objectDesire.designacao = undefined;
-		} else if (objectDesire.designacao === 'Leitura') {
-			objectDesire.leitura = true;
-			objectDesire.designacao = undefined;
-		} else if (objectDesire.designacao === 'Primeira visita') {
-			objectDesire.primeiraVisita = true;
-			objectDesire.designacao = undefined;
-		} else if (objectDesire.designacao === 'Revisita') {
-			objectDesire.revisita = true;
-			objectDesire.designacao = undefined;
-		} else if (objectDesire.designacao === 'Estudo bíblico') {
-			objectDesire.estudo = true;
-			objectDesire.designacao = undefined;
-		}
-		if (objectDesire.proferido === 'A') {
-			objectDesire.salaoPrincipal = true;
-			objectDesire.proferido = undefined;
-		} else if (objectDesire.proferido === 'B') {
-			objectDesire.salaB = true;
-			objectDesire.proferido = undefined;
-		} else if (objectDesire.proferido === 'C') {
-			objectDesire.salaC = true;
-			objectDesire.proferido = undefined;
-		}
-		var stringfied = JSON.stringify(objectDesire);
-		var array_string = JSON.parse(stringfied
-			.replace('data', 'data' + (j + 1))
-			.replace('nome', 'nome' + (j + 1))
-			.replace('ajudante', 'ajudante' + (j + 1))
-			.replace('caracteristica', 'caracteristica' + (j + 1))
-			.replace('outra', 'outra' + (j + 1))
-			.replace('outraTexto', 'outraTexto' + (j + 1))
-			.replace('leitura', 'leitura' + (j + 1))
-			.replace('primeiraVisita', 'primeiraVisita' + (j + 1))
-			.replace('revisita', 'revisita' + (j + 1))
-			.replace('estudo', 'estudo' + (j + 1))
-			.replace('salaoPrincipal', 'salaoPrincipal' + (j + 1))
-			.replace('salaB', 'salaB' + (j + 1))
-			.replace('salaC', 'salaC' + (j + 1)));
-		subFinalJson = merge(subFinalJson, array_string);
-	};
-	finalJson.push(subFinalJson);
-};
-
-// for (var key in finalJson) {
-// 	var page_data = finalJson[key];
-// 	for(var key in page_data){
-// 		if(key === 'designacao' && page_data[key] === 'Presidente'){
-// 			console.log(key);
-// 		}
-// 	}
-// }
-
-//console.log(finalJson);
-
-for (var key in finalJson) {
-	var page_data = finalJson[key];
-	var pdf = pdfFillForm.writeSync('S-89-T-4up-edited.pdf', page_data, {
-		"save": "pdf"
-	});
-	fs.writeFileSync("designacao-" + key + ".pdf", pdf);
+function sliceDataIntoPages(jsonData, amountAssignments, assignmentsPerPage) {
+    var pages = [];
+    for (var i = 0; i < amountAssignments; i = i + assignmentsPerPage) {
+        pages.push(jsonData.slice(i, (i + assignmentsPerPage)));
+    };
+    return pages;
 }
 
-// console.log(finalJson);
+function processAssignmentLabel(assignment) {
+    var assignmentPresident = 'Presidente';
+    var assignmentReading = 'Leitura';
+    var assignmentFirstVisit = 'Primeira visita';
+    var assignmentRevisit = 'Revisita';
+    var assignmentBibleStudy = 'Estudo bíblico';
+    if (assignment.designacao === assignmentPresident) {
+        assignment.outra = true;
+        assignment.outraTexto = assignment.designacao;
+        assignment.designacao = undefined;
+    } else if (assignment.designacao === assignmentReading) {
+        assignment.leitura = true;
+        assignment.designacao = undefined;
+    } else if (assignment.designacao === assignmentFirstVisit) {
+        assignment.primeiraVisita = true;
+        assignment.designacao = undefined;
+    } else if (assignment.designacao === assignmentRevisit) {
+        assignment.revisita = true;
+        assignment.designacao = undefined;
+    } else if (assignment.designacao === assignmentBibleStudy) {
+        assignment.estudo = true;
+        assignment.designacao = undefined;
+    }
+    return assignment;
+}
 
-// function allNames(names) {
-// 	var allNames = [];
-// 	for (var i = 0; i < names.length; i++) {
-// 		for (var j = 0; j < json[0]['DATA'][names[i]].length; j++) {
-// 			allNames.push(json[0]['DATA'][names[i]][j]['NAME']);
-// 		}
-// 	}
-// 	return allNames.sort();
-// }
+function processAssignmentGiveIn(assignment) {
+    var givenInMain = 'A';
+    var givenInAux1 = 'B';
+    var givenInAux2 = 'C';
+    if (assignment.proferido === givenInMain) {
+        assignment.salaoPrincipal = true;
+        assignment.proferido = undefined;
+    } else if (assignment.proferido === givenInAux1) {
+        assignment.salaB = true;
+        assignment.proferido = undefined;
+    } else if (assignment.proferido === givenInAux2) {
+        assignment.salaC = true;
+        assignment.proferido = undefined;
+    }
+    return assignment;
+}
 
-// for (var i = 0; i < finalJson.length; i++) {
-// 	pdfFillForm.write('S-89-T-4up-edited.pdf', finalJson[i][0], {
-// 			"save": "pdf"
-// 		})
-// 		.then(function(result) {
-// 			fs.writeFile("designacao-" + i + ".pdf", result, function(err) {
-// 				if (err) {
-// 					return console.log(err);
-// 				}
-// 				console.log("The file was saved!");
-// 			});
-// 		}, function(err) {
-// 			console.log(err);
-// 		});
-// };
+function replaceLabelsToIncrementalLabels(assignment, counter) {
+    var assignmentAsString = JSON.stringify(assignment);
+    var assignmentAsJSON = JSON.parse(assignmentAsString
+        .replace('data', 'data' + (counter + 1))
+        .replace('nome', 'nome' + (counter + 1))
+        .replace('ajudante', 'ajudante' + (counter + 1))
+        .replace('caracteristica', 'caracteristica' + (counter + 1))
+        .replace('outra', 'outra' + (counter + 1))
+        .replace('outraTexto', 'outraTexto' + (counter + 1))
+        .replace('leitura', 'leitura' + (counter + 1))
+        .replace('primeiraVisita', 'primeiraVisita' + (counter + 1))
+        .replace('revisita', 'revisita' + (counter + 1))
+        .replace('estudo', 'estudo' + (counter + 1))
+        .replace('salaoPrincipal', 'salaoPrincipal' + (counter + 1))
+        .replace('salaB', 'salaB' + (counter + 1))
+        .replace('salaC', 'salaC' + (counter + 1)));
+    return assignmentAsJSON;
+}
+
+function processData() {
+    var pages = sliceDataIntoPages(JSON_DATA, AMOUNT_OF_ASSIGNMENT, AMOUNT_OF_ASSIGNMENT_PER_PAGE);
+    var firstLevelData = [];
+    for (var pageKey in pages) {
+        var secondLevelData = {};
+        for (var j = 0; j < pages[pageKey].length; j++) {
+            var assignment = pages[pageKey][j];
+            assignment = replaceLabelsToIncrementalLabels(processAssignmentLabel(processAssignmentGiveIn(assignment)), j);
+            secondLevelData = merge(secondLevelData, assignment);
+        };
+        firstLevelData.push(secondLevelData);
+    }
+    return firstLevelData;
+}
+
+function generateAssignments(processedData) {
+    for (var pageKey in processedData) {
+        var page_data = processedData[pageKey];
+        var pdf = pdfFillForm.writeAsync(ASSIGNMENT_BASE_FILE, page_data, {
+            "save": "pdf"
+        }, function(err, pdf) {
+            fs.writeFile("vmc-designacao_" + uuid.v4() + ".pdf", pdf, function(err) {
+                if (err) {
+                    return console.log(err);
+                }
+                console.log("A file was saved!");
+            });
+        });
+    }
+}
+
+generateAssignments(processData());
