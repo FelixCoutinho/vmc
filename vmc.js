@@ -31,15 +31,17 @@ angular.module('vmcApp', ['ui.bootstrap'])
 				for (var room in viewAssignments[week]) {
 					for (var assignment in viewAssignments[week][room]) {
 						var finalAssignment = viewAssignments[week][room][assignment];
-						finalAssignments.push({
-							"key": md5(week + room + finalAssignment.name),
-							"date": week,
-							"name:": finalAssignment.name,
-							"assistant": finalAssignment.assistant,
-							"assignment": finalAssignment.assignment,
-							"point": finalAssignment.point,
-							"room": room
-						});
+						if (finalAssignment.assignment !== undefined) {
+							finalAssignments.push({
+								"key": md5(week + room + finalAssignment.name),
+								"date": week,
+								"name:": finalAssignment.name,
+								"assistant": finalAssignment.assistant,
+								"assignment": finalAssignment.assignment,
+								"point": finalAssignment.point,
+								"room": room
+							});
+						}
 					}
 
 				}

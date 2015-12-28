@@ -85,6 +85,11 @@
                   </div>
                   <div class="card-body collapse" style="padding-bottom:0;" id="card-body-{{$index}}">
                     <div class="row">
+                      <div class="row">
+                      <div class="col-xs-3" ng-repeat="meeting in week.meeting">
+                        <input type="text" class="form-control"></input>
+                      </div>
+                      </div>
                       <div class="col-xs-12 col-lg-4" ng-repeat="(key, value) in week">
                         <div class="sub-title" style="padding-top:0;">{{key}}</div>
                         <div class="row" ng-repeat="assignment in value">
@@ -108,8 +113,8 @@
               </div>
             </div>
             <button type="button" class="btn btn-success" ng-click="assignmentsCtrlVm.save()"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Save</button>
-            <button type="button" class="btn btn-info"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Print board</button>
-            <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> Print assignments</button>
+            <button type="button" class="btn btn-info" ng-disabled="true"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Print board</button>
+            <button type="button" class="btn btn-primary" ng-disabled="true"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> Print assignments</button>
           </div>
         </div>
       </div>

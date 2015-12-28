@@ -131,5 +131,180 @@
 			"point": "",
 			"assignment": "Bible study"
 		}]
+	},
+	"02/01/2016": {
+		"A": [{
+			"name": "",
+			"point": "",
+			"assignment": "Reading"
+		}]
+	},
+	"02/08/2016": {
+		"A": [{
+			"name": "",
+			"point": "",
+			"assignment": "Reading"
+		}, {
+			"name": "",
+			"assistant": "",
+			"point": "",
+			"assignment": "Initial call"
+		}, {
+			"name": "",
+			"assistant": "",
+			"point": "",
+			"assignment": "Return visit"
+		}, {
+			"name": "",
+			"assistant": "",
+			"point": "",
+			"assignment": "Bible study"
+		}],
+		"B": [{
+			"name": "",
+			"point": "",
+			"assignment": "Reading"
+		}, {
+			"name": "",
+			"assistant": "",
+			"point": "",
+			"assignment": "Initial call"
+		}, {
+			"name": "",
+			"assistant": "",
+			"point": "",
+			"assignment": "Return visit"
+		}, {
+			"name": "",
+			"assistant": "",
+			"point": "",
+			"assignment": "Bible study"
+		}]
+	},
+	"02/15/2016": {
+		"A": [{
+			"name": "",
+			"point": "",
+			"assignment": "Reading"
+		}, {
+			"name": "",
+			"assistant": "",
+			"point": "",
+			"assignment": "Initial call"
+		}, {
+			"name": "",
+			"assistant": "",
+			"point": "",
+			"assignment": "Return visit"
+		}, {
+			"name": "",
+			"assistant": "",
+			"point": "",
+			"assignment": "Bible study"
+		}],
+		"B": [{
+			"name": "",
+			"point": "",
+			"assignment": "Reading"
+		}, {
+			"name": "",
+			"assistant": "",
+			"point": "",
+			"assignment": "Initial call"
+		}, {
+			"name": "",
+			"assistant": "",
+			"point": "",
+			"assignment": "Return visit"
+		}, {
+			"name": "",
+			"assistant": "",
+			"point": "",
+			"assignment": "Bible study"
+		}]
+	},
+	"02/22/2016": {
+		"A": [{
+			"name": "",
+			"point": "",
+			"assignment": "Reading"
+		}, {
+			"name": "",
+			"assistant": "",
+			"point": "",
+			"assignment": "Initial call"
+		}, {
+			"name": "",
+			"assistant": "",
+			"point": "",
+			"assignment": "Initial call"
+		}, {
+			"name": "",
+			"assistant": "",
+			"point": "",
+			"assignment": "Bible study"
+		}],
+		"B": [{
+			"name": "",
+			"point": "",
+			"assignment": "Reading"
+		}, {
+			"name": "",
+			"assistant": "",
+			"point": "",
+			"assignment": "Initial call"
+		}, {
+			"name": "",
+			"assistant": "",
+			"point": "",
+			"assignment": "Return visit"
+		}, {
+			"name": "",
+			"assistant": "",
+			"point": "",
+			"assignment": "Bible study"
+		}]
+	},
+	"02/29/2016": {
+		"A": [{
+			"name": "",
+			"point": "",
+			"assignment": "Reading"
+		}, {
+			"name": "",
+			"assistant": "",
+			"point": "",
+			"assignment": "Initial call"
+		}, {
+			"name": "",
+			"assistant": "",
+			"point": "",
+			"assignment": "Return visit"
+		}, {
+			"name": "",
+			"assistant": "",
+			"point": "",
+			"assignment": "Bible study"
+		}],
+		"B": [{
+			"name": "",
+			"point": "",
+			"assignment": "Reading"
+		}, {
+			"name": "",
+			"assistant": "",
+			"point": "",
+			"assignment": "Initial call"
+		}, {
+			"name": "",
+			"assistant": "",
+			"point": "",
+			"assignment": "Return visit"
+		}, {
+			"name": "",
+			"assistant": "",
+			"point": "",
+			"assignment": "Bible study"
+		}]
 	}
 }
