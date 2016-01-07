@@ -24,7 +24,14 @@ exports.paths = {
  *  to inject css preprocessor deps and js files in karma
  */
 exports.wiredep = {
-  exclude: [/jquery/, /\/bootstrap\.js$/, /\/bootstrap\.css/],
+  /**
+   * I removed jquery exclusion because the FlatUI features need it :(
+   * Let's see that will be a problem :)
+   *
+   * Felix Coutinho - 7/1/15
+   **/
+  // exclude: [/jquery/, /\/bootstrap\.js$/, /\/bootstrap\.css/],
+  exclude: [/\/bootstrap\.js$/, /\/bootstrap\.css/],
   directory: 'bower_components'
 };
 

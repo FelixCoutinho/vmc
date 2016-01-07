@@ -12,6 +12,11 @@
         controller: 'MainController',
         controllerAs: 'main'
       })
+      .when('/lifeandministry', {
+        templateUrl: 'app/lifeandministry/index.html',
+        controller: 'LifeAndMinistryController',
+        controllerAs: 'lifeandministry'
+      })
       .otherwise({
         redirectTo: '/'
       });

@@ -1,0 +1,47 @@
+<div class="side-body">
+  <div class="page-title">
+    <span class="title">Life And Ministry</span>
+  </div>
+  <div class="row" ng-repeat="(key, week) in lifeandministry.assignments track by $id(week)">
+    <div class="col-xs-12">
+      <div class="card panel" style="margin-bottom: 0;">
+        <div class="card-header">
+          <div class="card-title">
+            <div class="title">
+              <a href="" data-toggle="collapse" data-target="#card-body-{{$index}}">{{key | weekDate}}</a>
+            </div>
+          </div>
+        </div>
+        <div class="card-body collapse" style="padding-bottom:0;" id="card-body-{{$index}}">
+          <div class="row">
+            <div class="row">
+              <div class="col-xs-3" ng-repeat="meeting in week.meeting">
+                <input type="text" class="form-control"></input>
+              </div>
+            </div>
+            <div class="col-xs-12 col-lg-4" ng-repeat="(key, value) in week">
+              <div class="sub-title" style="padding-top:0;">{{key}}</div>
+              <div class="row" ng-repeat="assignment in value">
+                <div ng-show="assignment.assignment == 'Reading'" class="col-xs-10" style="margin-bottom:10px;padding-right:0;">
+                  <input type="text" class="form-control" id="" placeholder="Name" ng-model="assignment.name" uib-typeahead="student for student in lifeandministry.students | filter:$viewValue">
+                </div>
+                <div ng-show="assignment.assignment == 'Initial call' || assignment.assignment == 'Return visit' || assignment.assignment == 'Bible study'" class="col-xs-5" style="margin-bottom:10px;padding-right:0;">
+                  <input type="text" class="form-control" id="" placeholder="Name" ng-model="assignment.name" uib-typeahead="student for student in lifeandministry.students | filter:$viewValue">
+                </div>
+                <div ng-show="assignment.assignment == 'Initial call' || assignment.assignment == 'Return visit' || assignment.assignment == 'Bible study'" class="col-xs-5" style="margin-bottom:10px;padding-right:0;">
+                  <input type="text" class="form-control" id="" placeholder="Assistant" ng-model="assignment.assistant" uib-typeahead="student for student in lifeandministry.students | filter:$viewValue">
+                </div>
+                <div class="col-xs-2" ng-show="assignment.assignment != 'Presidente'" style="margin-bottom:10px;padding-right:0;">
+                  <input type="number" class="form-control" id="" placeholder="Point" ng-model="assignment.point">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button type="button" class="btn btn-success" ng-click="lifeandministry.save()"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Save</button>
+  <button type="button" class="btn btn-info" ng-disabled="true"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Print board</button>
+  <button type="button" class="btn btn-primary" ng-disabled="true"><span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> Print assignments</button>
+</div>

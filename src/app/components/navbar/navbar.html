@@ -1,21 +1,62 @@
-<nav class="navbar navbar-static-top navbar-inverse">
+<nav class="navbar navbar-default navbar-fixed-top navbar-top">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="https://github.com/Swiip/generator-gulp-angular">
-        <span class="glyphicon glyphicon-home"></span> Gulp Angular
-      </a>
-    </div>
-
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
-      <ul class="nav navbar-nav">
-        <li class="active"><a ng-href="#">Home</a></li>
-        <li><a ng-href="#">About</a></li>
-        <li><a ng-href="#">Contact</a></li>
-      </ul>
-
-      <ul class="nav navbar-nav navbar-right acme-navbar-text">
-        <li>Application was created {{ vm.relativeDate }}.</li>
-      </ul>
+      <button type="button" class="navbar-expand-toggle" ng-click="expandedMenu = !expandedMenu">
+      <i class="fa fa-bars icon"></i>
+      </button>
+      <ol class="breadcrumb navbar-breadcrumb">
+        <li class="active"></li>
+      </ol>
+      <button type="button" class="navbar-right-expand-toggle pull-right visible-xs">
+      <i class="fa fa-th icon"></i>
+      </button>
     </div>
   </div>
 </nav>
+<div class="side-menu sidebar-inverse">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="side-menu-container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+          <div class="icon glyphicon glyphicon-print"></div>
+          <div class="title">Teocracy</div>
+        </a>
+        <button type="button" class="navbar-expand-toggle pull-right visible-xs">
+        <i class="fa fa-times icon"></i>
+        </button>
+      </div>
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="/#/">
+            <span class="icon fa fa-users"></span><span class="title">Publishers</span>
+          </a>
+        </li>
+        <li>
+          <a href="/#/lifeandministry">
+            <span class="icon fa fa-diamond"></span><span class="title">Life and Ministry</span>
+          </a>
+        </li>
+        <li>
+          <a href="/#/">
+            <span class="icon fa fa-calculator"></span><span class="title">Accounts</span>
+          </a>
+        </li>
+        <li>
+          <a href="/#/">
+            <span class="icon fa fa-trash"></span><span class="title">Hall Cleaning</span>
+          </a>
+        </li>
+        <li>
+          <a href="/#/">
+            <span class="icon fa fa-gears"></span><span class="title">Tasks</span>
+          </a>
+        </li>
+        <li>
+          <a href="/#/">
+            <span class="icon fa fa-briefcase"></span><span class="title">Field Service</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
