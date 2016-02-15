@@ -1,5 +1,5 @@
 {
-  "01/04/2016": {
+  "04/04/2016": {
     "General": [{
       "name": "",
       "assignment": "President"
@@ -12,29 +12,32 @@
     }],
     "Treasures": [{
       "name": "",
-      "assignment": "Speech"
+      "assignment": "Encourage and Strengthen Others With Kind Words"
     }, {
       "name": "",
       "assignment": "Digging for Spiritual Gems"
     }, {
       "name": "",
       "point": "",
-      "assignment": "Reading",
+      "assignment": "Bible Reading",
       "room": "A"
     }],
     "Apply yourself": [{
       "name": "",
-      "assignment": "Month’s Presentations"
+      "assignment": "Prepare This Month’s Presentations"
     }],
     "Living as Christians": [{
       "name": "",
-      "assignment": "Our Privilege to Build and Maintain Places of True Worship"
+      "assignment": "New Feature for Starting Conversations"
+    }, {
+      "name": "",
+      "assignment": "Questions From Readers"
     }, {
       "name": "",
       "assignment": "Congregation Bible Study"
     }]
   },
-  "01/11/2016": {
+  "04/11/2016": {
     "General": [{
       "name": "",
       "assignment": "President"
@@ -47,24 +50,24 @@
     }],
     "Treasures": [{
       "name": "",
-      "assignment": "Speech"
+      "assignment": "Job Resisted Wrong Thinking"
     }, {
       "name": "",
       "assignment": "Digging for Spiritual Gems"
     }, {
       "name": "",
       "point": "",
-      "assignment": "Reading",
+      "assignment": "Bible Reading",
       "room": "A"
     }, {
       "name": "",
       "point": "",
-      "assignment": "Reading",
+      "assignment": "Bible Reading",
       "room": "B"
     }, {
       "name": "",
       "point": "",
-      "assignment": "Reading",
+      "assignment": "Bible Reading",
       "room": "C"
     }],
     "Apply yourself": [{
@@ -124,16 +127,13 @@
     }],
     "Living as Christians": [{
       "name": "",
-      "assignment": "Repentance Makes a Difference"
-    }, {
-      "name": "",
-      "assignment": "Forgive Freely"
+      "assignment": "Beat a Bully Without Using Your Fists"
     }, {
       "name": "",
       "assignment": "Congregation Bible Study"
     }]
   },
-  "01/18/2016": {
+  "04/18/2016": {
     "General": [{
       "name": "",
       "assignment": "President"
@@ -146,24 +146,24 @@
     }],
     "Treasures": [{
       "name": "",
-      "assignment": "Speech"
+      "assignment": "Job Was an Example of Integrity"
     }, {
       "name": "",
       "assignment": "Digging for Spiritual Gems"
     }, {
       "name": "",
       "point": "",
-      "assignment": "Reading",
+      "assignment": "Bible Reading",
       "room": "A"
     }, {
       "name": "",
       "point": "",
-      "assignment": "Reading",
+      "assignment": "Bible Reading",
       "room": "B"
     }, {
       "name": "",
       "point": "",
-      "assignment": "Reading",
+      "assignment": "Bible Reading",
       "room": "C"
     }],
     "Apply yourself": [{
@@ -223,16 +223,13 @@
     }],
     "Living as Christians": [{
       "name": "",
-      "assignment": "All These Other Things Will Be Added to You"
-    }, {
-      "name": "",
-      "assignment": "Your Speech—“‘Yes’ and yet ‘No’”?"
+      "assignment": "Learn From the Integrity of Others"
     }, {
       "name": "",
       "assignment": "Congregation Bible Study"
     }]
   },
-  "01/25/2016": {
+  "04/25/2016": {
     "General": [{
       "name": "",
       "assignment": "President"
@@ -245,24 +242,24 @@
     }],
     "Treasures": [{
       "name": "",
-      "assignment": "Speech"
+      "assignment": "A True Friend Gives Upbuilding Counsel"
     }, {
       "name": "",
       "assignment": "Digging for Spiritual Gems"
     }, {
       "name": "",
       "point": "",
-      "assignment": "Reading",
+      "assignment": "Bible Reading",
       "room": "A"
     }, {
       "name": "",
       "point": "",
-      "assignment": "Reading",
+      "assignment": "Bible Reading",
       "room": "B"
     }, {
       "name": "",
       "point": "",
-      "assignment": "Reading",
+      "assignment": "Bible Reading",
       "room": "C"
     }],
     "Apply yourself": [{
@@ -321,14 +318,14 @@
       "room": "C"
     }],
     "Living as Christians": [{
-      "name": "",
-      "assignment": "Improving Our Skills in the Ministry—Laying the Groundwork for a Return Visit"
-    }, {
       "name": "",
       "assignment": "Local needs"
     }, {
       "name": "",
       "assignment": "Congregation Bible Study"
+    }, {
+      "name": "",
+      "assignment": "Convention Reminders"
     }]
   }
 }

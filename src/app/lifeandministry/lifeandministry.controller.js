@@ -9,7 +9,7 @@
   function LifeAndMinistryController($scope, $timeout, $http, $log) {
     var vm = this;
 
-    $http.get('lifeandministry_structure.json').success(function(data) {
+    $http.get('lifeandministry_structure_201603.json').success(function(data) {
       vm.assignments = data;
     });
 
