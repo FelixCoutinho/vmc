@@ -12,6 +12,11 @@
         controller: 'MainController',
         controllerAs: 'main'
       })
+      .when('/publishers', {
+        templateUrl: 'app/publishers/index.html',
+        controller: 'PublishersController',
+        controllerAs: 'publishers'
+      })
       .when('/lifeandministry', {
         templateUrl: 'app/lifeandministry/index.html',
         controller: 'LifeAndMinistryController',

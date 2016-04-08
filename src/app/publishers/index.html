@@ -1,0 +1,114 @@
+<div class="side-body">
+  <div class="page-title">
+    <span class="title">Publishers</span>
+  </div>
+  <div class="default-buttons">
+    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modalNewPublisher"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> New publisher</button>
+    <div class="modal fade" id="modalNewPublisher" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h4 class="modal-title" id="myModalLabel">New Publisher</h4>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <div>
+                  <div class="radio3 radio-success radio-inline radio-check ">
+                    <input type="radio" id="radio-genre-1" name="radio-genre" value="Male">
+                    <label for="radio-genre-1">
+                      Male
+                    </label>
+                  </div>
+                  <div class="radio3 radio-success radio-inline radio-check">
+                    <input type="radio" id="radio-genre-2" name="radio-genre" value="Female">
+                    <label for="radio-genre-2">
+                      Female
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" ng-model="publisher.name" placeholder="Full name">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" ng-model="publisher.name" placeholder="Address">
+              </div>
+               <div class="form-group">
+                <input type="text" class="form-control" ng-model="publisher.name" placeholder="Residential phone">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" ng-model="publisher.name" placeholder="Mobile phone">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" ng-model="publisher.name" placeholder="Birth date">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" ng-model="publisher.name" placeholder="Birth">
+              </div> 
+              <div class="form-group">
+                <input type="text" class="form-control" ng-model="publisher.name" placeholder="Baptism date">
+              </div>
+              <div class="form-group">
+                <div>
+                  <div class="radio3 radio-success radio-inline radio-check ">
+                    <input type="radio" id="radio-assignment-1" name="radio-assignment" value="Elder">
+                    <label for="radio-assignment-1">
+                      Elder
+                    </label>
+                  </div>
+                  <div class="radio3 radio-success radio-inline radio-check">
+                    <input type="radio" id="radio-assignment-2" name="radio-assignment" value="Ministerial Servant">
+                    <label for="radio-assignment-2">
+                      Ministerial Servant
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div>
+                  <div class="checkbox3 checkbox-success checkbox-inline checkbox-check checkbox-round  checkbox-light">
+                    <input type="checkbox" id="checkbox-pioneer">
+                    <label for="checkbox-pioneer">
+                      Regular Pioneer
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" ng-click="lifeandministry.save()"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Save</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal"><span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span> Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title-search-publishers">
+            <input type="text" class="form-control" ng-model="publisherName" placeholder="Publisher name">
+          </div>
+        </div>
+        <div class="card-body">
+          <table class="table table-hover">
+            <thead>
+            </thead>
+            <tbody>
+              <tr ng-repeat="publisher in publishers.publishers | filter:publisherName">
+                <td>
+                  {{publisher.name}}
+                </td>
+                <td>{{publisher.assignment}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
