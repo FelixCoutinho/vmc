@@ -16,11 +16,13 @@
     "angular-notify": "~2.5.0",
     "animate.css": "~3.4.0",
     "bootstrap": "~3.3.6",
-    "flat-admin-bootstrap-templates": "https://github.com/tui2tone/flat-admin-bootstrap-templates.git#~2.1.2",
     "roboto-condensed": "https://github.com/davidcunningham/roboto-condensed.git#~0.3.0",
     "lato": "~0.3.0",
     "moment": "~2.10.6",
-    "js-md5": "md5#~0.3.0"
+    "js-md5": "md5#~0.3.0",
+    "flat-admin-bootstrap-templates": "https://github.com/tui2tone/flat-admin-bootstrap-templates.git#~2.1.2",
+    "angular-input-masks": "^2.2.0",
+    "angular-ui-mask": "^1.8.3"
   },
   "private": true,
   "devDependencies": {
@@ -34,14 +36,15 @@
     },
     "bootstrap": {
       "main": [
-        "less/bootstrap.less",
-        "dist/fonts/glyphicons-halflings-regular.eot",
-        "dist/fonts/glyphicons-halflings-regular.svg",
-        "dist/fonts/glyphicons-halflings-regular.ttf",
-        "dist/fonts/glyphicons-halflings-regular.woff",
-        "dist/fonts/glyphicons-halflings-regular.woff2",
-        "js/collapse.js",
-        "js/modal.js"
+        "dist/js/bootstrap.min.js",
+        "dist/css/bootstrap.min.css",
+        "fonts/*"
+      ]
+    },
+    "font-awesome": {
+      "main": [
+        "css/font-awesome.min.css",
+        "fonts/*"
       ]
     },
     "flat-admin-bootstrap-templates": {
@@ -49,14 +52,6 @@
         "dist/css/style.css",
         "dist/css/themes/flat-blue.css",
         "dist/js/app.js"
-      ]
-    },
-    "font-awesome": {
-      "main": [
-        "css/font-awesome.css",
-        "fonts/fontawesome-webfont.woff2",
-        "fonts/fontawesome-webfont.woff",
-        "fonts/fontawesome-webfont.ttf"
       ]
     }
   },

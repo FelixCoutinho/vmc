@@ -18,7 +18,6 @@
     });
 
     vm.save = function() {
-      $log.debug(vm.assignments);
       var viewAssignments = vm.assignments;
       var finalAssignments = [];
       for (var week in viewAssignments) {
@@ -40,7 +39,6 @@
           }
         }
       }
-      $log.debug(finalAssignments);
     }
   }
 })();

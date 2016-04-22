@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('vmc', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'ngResource', 'ngRoute', 'ui.bootstrap', 'toastr']);
+    .module('vmc', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngMessages', 'ngAria', 'ngResource', 'ngRoute', 'ui.bootstrap', 'toastr', 'ui.utils.masks', 'ui.mask']);
 
 })();

@@ -2,6 +2,22 @@
   <div class="page-title">
     <span class="title">Publishers</span>
   </div>
+  <div class="row">
+    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+      <a href="#">
+        <div class="card green summary-inline">
+          <div class="card-body">
+            <i class="icon fa fa-comments fa-4x"></i>
+            <div class="content">
+              <div class="title">81</div>
+              <div class="sub-title">Publishers</div>
+            </div>
+            <div class="clear-both"></div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
   <div class="default-buttons">
     <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modalNewPublisher"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> New publisher</button>
     <div class="modal fade" id="modalNewPublisher" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
@@ -11,55 +27,78 @@
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
             <h4 class="modal-title" id="myModalLabel">New Publisher</h4>
           </div>
-          <div class="modal-body">
-            <form>
+          <form name="newPublisher" novalidate>
+            <div class="modal-body">
+              <!-- <div class="alert alert-danger" role="alert">
+                <strong>Sorry!</strong> Something below is wrong. Please, check it.
+              </div> -->
               <div class="form-group">
                 <div>
                   <div class="radio3 radio-success radio-inline radio-check ">
-                    <input type="radio" id="radio-genre-1" name="radio-genre" value="Male">
+                    <input type="radio" id="radio-genre-1" name="radio-genre" ng-model="publishers.publisher.genre" value="MALE">
                     <label for="radio-genre-1">
                       Male
                     </label>
                   </div>
                   <div class="radio3 radio-success radio-inline radio-check">
-                    <input type="radio" id="radio-genre-2" name="radio-genre" value="Female">
+                    <input type="radio" id="radio-genre-2" name="radio-genre" ng-model="publishers.publisher.genre" value="FEMALE">
                     <label for="radio-genre-2">
                       Female
                     </label>
                   </div>
                 </div>
               </div>
-              <div class="form-group">
-                <input type="text" class="form-control" ng-model="publisher.name" placeholder="Full name">
+              <div class="form-group" ng-class="{'has-error': newPublisher.name.$invalid}">
+                <input type="text" name="name" class="form-control" ng-model="publishers.publisher.name" placeholder="Name">
+                <p ng-show="newPublisher.name.$invalid" class="help-block">You name is required.</p>
+              </div>
+              <div class="form-group" ng-class="{'has-error': newPublisher.address.$invalid}">
+                <input type="text" name="address" class="form-control" ng-model="publishers.publisher.address" placeholder="Address">
+              </div>
+              <div class="form-group" ng-class="{'has-error': newPublisher.homeTelephone.$invalid}">
+                <input type="text" name="homeTelephone" class="form-control" ng-model="publishers.publisher.homeTelephone" placeholder="Residential phone" ui-mask="(999) 999-9999" ui-mask-placeholder="" ui-mask-placeholder-char="">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" ng-model="publisher.name" placeholder="Address">
+                <input type="text" name="mobileTelephone" class="form-control" ng-model="publishers.publisher.mobileTelephone" placeholder="Mobile phone" ui-mask="(999) 999-9999" ui-mask-placeholder="" ui-mask-placeholder-char="">
               </div>
-               <div class="form-group">
-                <input type="text" class="form-control" ng-model="publisher.name" placeholder="Residential phone">
+              <div class="form-group" ng-class="{'has-error': newPublisher.birth.$invalid}">
+                <div class="input-group">
+                  <input type="text" name="birth" class="form-control" ng-model="publishers.publisher.birth" aria-describedby="basic-addon-birth-date" placeholder="Birth date" ui-mask="99/99/9999" ui-mask-placeholder="" ui-mask-placeholder-char="">
+                  <span class="input-group-addon" id="basic-addon-birth-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></span>
+                </div>
               </div>
-              <div class="form-group">
-                <input type="text" class="form-control" ng-model="publisher.name" placeholder="Mobile phone">
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" ng-model="publisher.name" placeholder="Birth date">
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" ng-model="publisher.name" placeholder="Birth">
-              </div> 
-              <div class="form-group">
-                <input type="text" class="form-control" ng-model="publisher.name" placeholder="Baptism date">
+              <div class="form-group" ng-class="{'has-error': newPublisher.baptism.$invalid}">
+                <div class="input-group">
+                  <input type="text" name="baptism" class="form-control" ng-model="publishers.publisher.baptism" aria-describedby="basic-addon-baptism-date" placeholder="Baptism date" ui-mask="99/99/9999" ui-mask-placeholder="" ui-mask-placeholder-char="">
+                  <span class="input-group-addon" id="basic-addon-baptism-date"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></span>
+                </div>
               </div>
               <div class="form-group">
                 <div>
                   <div class="radio3 radio-success radio-inline radio-check ">
-                    <input type="radio" id="radio-assignment-1" name="radio-assignment" value="Elder">
+                    <input type="radio" id="radio-other-sheep-anointed-1" name="radio-other-sheep-anointed" ng-model="publishers.publisher.isOtherSheep" value="true">
+                    <label for="radio-other-sheep-anointed-1">
+                      Other sheep
+                    </label>
+                  </div>
+                  <div class="radio3 radio-success radio-inline radio-check">
+                    <input type="radio" id="radio-other-sheep-anointed-2" name="radio-other-sheep-anointed" ng-model="publishers.publisher.isAnointed" value="true">
+                    <label for="radio-other-sheep-anointed-2">
+                      Anointed
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div>
+                  <div class="radio3 radio-success radio-inline radio-check ">
+                    <input type="radio" id="radio-assignment-1" name="radio-assignment" ng-model="publishers.publisher.isElder" value="true">
                     <label for="radio-assignment-1">
                       Elder
                     </label>
                   </div>
                   <div class="radio3 radio-success radio-inline radio-check">
-                    <input type="radio" id="radio-assignment-2" name="radio-assignment" value="Ministerial Servant">
+                    <input type="radio" id="radio-assignment-2" name="radio-assignment" ng-model="publishers.publisher.isMinisterialServant" value="true">
                     <label for="radio-assignment-2">
                       Ministerial Servant
                     </label>
@@ -68,20 +107,20 @@
               </div>
               <div class="form-group">
                 <div>
-                  <div class="checkbox3 checkbox-success checkbox-inline checkbox-check checkbox-round  checkbox-light">
-                    <input type="checkbox" id="checkbox-pioneer">
+                  <div class="checkbox3 checkbox-success checkbox-inline checkbox-check checkbox-round checkbox-light">
+                    <input type="checkbox" id="checkbox-pioneer" name="checkbox-pioneer" ng-model="publishers.publisher.isRegularPioneer" value="true">
                     <label for="checkbox-pioneer">
                       Regular Pioneer
                     </label>
                   </div>
                 </div>
               </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-success" ng-click="lifeandministry.save()"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Save</button>
-            <button type="button" class="btn btn-primary" data-dismiss="modal"><span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span> Cancel</button>
-          </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success" ng-click="publishers.save()"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Save</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal"><span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span> Cancel</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
